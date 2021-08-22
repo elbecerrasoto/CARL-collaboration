@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Collaboration at CARL</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emanuel Becerra Soto" />
+    <script src="CARL_collaboration_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Collaboration at CARL
+## CAs &amp; RL!
+### Emanuel Becerra Soto
+### NDSL CIC IPN
+### 2021 August (updated: 2021-08-21)
+
+---
+
+
+
+
+
+
+
+class: inverse
+
+![bulldozer](pics/render_bulldozer.svg)
+
+---
+
+class: inverse
+
+## Disclaimer
+
+This is my current understanding of the project and the measures that follow from there. You are invited to disagree.
+
+My goal is to discuss and set everybody on the same page.
+
+---
+
+## CARL Modules
+
+CARL overall structure:
+
+The modules of CARL (from bottom to top):
+1. GYMCA
+2. Agents
+3. Paper Experiments
+4. Paper Writing (deliverable)
+
+???
+
+Four modules and their interactions have to be defined and built.
+
+---
+## CARL Modules
+### How to build a Module?
+
+1. ⭐ Prototype
+2. ⭐, ⭐ Architecture
+3. ⭐, ⭐, ⭐ Get it (Fill in the Architecture)
+4. ⭐, ⭐, ⭐, ⭐ Polish it
+
+???
+
+Synonyms:
+- Architecture (software)
+- Process (collaboration)
+- Outline (writing)
+
+Step `2.5` _tracer bullet_.
+
+---
+
+## CARL Modules
+### Where are we?
+
+1. ⭐, ⭐, ⭐ GYMCA (Getting it)
+2. ⭐, ⭐ Agents (Architecture)
+3. ⭐ Paper Experiments (Prototype)
+4. ⭐ Paper Writing (Prototype)
+
+---
+
+## Paper
+### Types
+
+Paper types:
+1. 🌎 👾 Environment Centric (modeling, CAs)
+2. 🤖 🎮 Agent Centric (algorithmic, RLs)
+3. Other (do not know, holistic?)
+
+---
+
+## Paper
+### Prerequisites
+
+Paper requires:
++ Environments
++ Agents
+
+--
+
+So they are our primitives and should be more clearly defined.
+
+---
+
+## Prerequisites
+
+A _Bottom-Up Approach_ works well when we do not have clarity about the final result.
+
+--
+
+So for the moment we should focus on the GYMCA and Agent modules.
+
+---
+
+## Interactions
+
+Interactions between modules.
+
+---
+
+## Interactions
+### GYMCA - Paper
+#### GYMCA vision
+
+_CA Envs_ on GYMCA should be:
++ Interesting
++ Used for reference
+  + Simple
+
+--
+
+Agents are allowed into the _repo_ as long as they align with _GYMCA vision_. 
+
+---
+## Interactions
+### GYMCA - Paper
+
+Classification of environments:
+
++ Interesting
+    + Publishable
+        + CARL Paper
+
+???
+
+Interesting: An unexpected trait. It is a powerful heuristic for research.
+
+---
+
+## Interactions
+### GYMCA - Agents
+
+How to find interesting _environments_?
+
+--
+
+#### The Meta Problem
+
+&gt; The problem on how to find _interesting_ problems.
+
+---
+
+## Interactions
+### GYMCA - Agents
+#### The Meta Problem
+
+The solution codifies the problem so ...
+
+--
+
+&gt; ... an _interesting solution_ signals an _interesting problem_.
+
+--
+
+So we are _kinda_ justified for tweaking the environments ...
+
+---
+
+### Agents - Paper
+
+### 👷‍♀️ 🚧 👷‍♂️
+
+---
+
+## Solutions
+### 📦 One _repository_ per _module_
+
+Module | Repo | Comments
+------ | -----| -----
+**GYMCA** | `gym-cellular-automata` | -
+**Agents** | `CARL-agents` | -
+**Paper Experiments** | `CARL-experiments` | Selected Envs &amp; Agents
+**Paper Writing** | `CARL` | -
+
+---
+
+## Solutions
+### 📦 Agents Repo
+
++ `./`
+  + `README.md`
+  + `...`
+  + `agents/`
+      + `algoName_i1.py`
+      + `algoName_i1.yaml`
+      + `...`
+  + `results/`
+      + `algoName_i1/`
+        + `Undefined`
+        + `train.py`
+        + `plot.py`
+          + `utils.py`
+  
+
+---
+
+## Solutions
+### 📦 Agents Repo
+
+&gt; Hyperparameters File ...
+
+--
+
+### 👷‍♀️ 🚧 👷‍♂️
+
+---
+
+class: inverse, middle
+
+## Thanks!
+
+![helicopter](pics/render_helicopter.svg)
+
+---
+
+class: inverse, center, middle
+
+## Extra Slides
+
+---
+
+## Architecture Status
+
+Architecture:
+1. Kludge
+2. Test
+3. Stable
+
+---
+
+## GYMCA Architecture
+
+Architecture Status: Test
+
+0. Utils (gym utils, spaces, parsing, rendering, neighbors)
+1. Operators
+2. MDP
+3. Environment
+
+---
+
+## GNU policy for bugs
+
+--
+
+### A random GNU tool
+
+```
+... If it's not clear whether you
+should be able to do something or not, report that too; it's a bug in
+the documentation! ...
+```
+
+--
+
+```
+... Before reporting a bug or trying to fix it yourself, try to isolate
+it to the smallest possible input file that reproduces the problem. ...
+```
+
+???
+
+From the `m4` documentation
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
